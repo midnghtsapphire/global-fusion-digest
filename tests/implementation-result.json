@@ -1,0 +1,113 @@
+{
+  "status": "CAN",
+  "package": "@midnghtsapphire/global-fusion-digest",
+  "version": "1.0.0",
+  "node": "v22.23.4",
+  "tests": {
+    "passed": 20,
+    "failed": 0
+  },
+  "live": {
+    "generated_at_utc": "2026-11-12T19:06:21.230Z",
+    "catalog_version": "2026.11.10",
+    "catalog_release_date": "2026-11-10T19:03:29.8375Z",
+    "catalog_entry_count": 1779,
+    "collection_status": "ok",
+    "recent_kev": 12,
+    "severity_counts": {
+      "Critical": 4,
+      "High": 5,
+      "Anomaly": 0,
+      "Medium": 3,
+      "Low": 0
+    },
+    "ics_advisories": 3,
+    "official_ic3_items": 3,
+    "cisa_cyber_advisories": 3,
+    "source_status": [
+      {
+        "name": "CISA Cyber",
+        "url": "https://www.cisa.gov/news-events/cybersecurity-advisories",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:17.399Z"
+      },
+      {
+        "name": "CISA Cyber detail",
+        "url": "https://www.cisa.gov/news-events/alerts/2026/11/06/cisa-adds-one-known-exploited-vulnerability-catalog",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:21.194Z"
+      },
+      {
+        "name": "CISA Cyber detail",
+        "url": "https://www.cisa.gov/news-events/alerts/2026/11/09/cisa-adds-four-known-exploited-vulnerabilities-catalog",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:21.054Z"
+      },
+      {
+        "name": "CISA Cyber detail",
+        "url": "https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:20.843Z"
+      },
+      {
+        "name": "CISA ICS",
+        "url": "https://www.cisa.gov/news-events/ics-advisories",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:16.554Z"
+      },
+      {
+        "name": "CISA ICS detail",
+        "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-02",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:20.530Z"
+      },
+      {
+        "name": "CISA ICS detail",
+        "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-04",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:19.309Z"
+      },
+      {
+        "name": "CISA ICS detail",
+        "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-05",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:19.194Z"
+      },
+      {
+        "name": "CISA KEV",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:16.188Z"
+      },
+      {
+        "name": "FBI IC3",
+        "url": "https://www.ic3.gov/PSA",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:18.838Z"
+      },
+      {
+        "name": "FBI IC3 detail",
+        "url": "https://www.ic3.gov/PSA/2026/PSA261016",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:20.514Z"
+      },
+      {
+        "name": "FBI IC3 detail",
+        "url": "https://www.ic3.gov/PSA/2026/PSA261023",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:21.224Z"
+      },
+      {
+        "name": "FBI IC3 detail",
+        "url": "https://www.ic3.gov/PSA/2026/PSA261023-2",
+        "status": "ok",
+        "retrieved_at": "2026-11-12T19:06:19.862Z"
+      }
+    ],
+    "raw_snapshots": 13,
+    "artifact_hashes_verified": 21,
+    "digest_path": "/home/ubuntu/global-fusion-digest/tests/live-artifacts/production-run/digests/2026/2026-11-12-TURN-001"
+  },
+  "no_git_operations": true,
+  "no_remote_publishing": true
+}

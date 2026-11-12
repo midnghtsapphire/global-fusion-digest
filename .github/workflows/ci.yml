@@ -1,0 +1,67 @@
+name: Global Fusion CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-11-12
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, verified 2026-11-12
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run check
+      - run: npm test
+      - name: Validate Action runner inputs
+        run: node .github/scripts/test-action-inputs.mjs
+      - name: Create installable release tarball
+        run: npm pack --pack-destination "$RUNNER_TEMP"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, verified 2026-11-12
+        with:
+          name: global-fusion-npm-tarball
+          path: ${{ runner.temp }}/*.tgz
+          if-no-files-found: error
+          retention-days: 14
+  action-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-11-12
+        with:
+          persist-credentials: false
+      # This exercises the actual local composite Action against official public sources.
+      # Source outages are real failures, not synthetic current threat data.
+      - name: Run Action
+        id: digest
+        uses: ./
+        with:
+          output-directory: action-smoke-output
+          latest-limit: '1'
+          advisory-limit: '1'
+      - name: Verify archived outputs
+        env:
+          FUSION_REPORT: ${{ steps.digest.outputs.report }}
+          FUSION_ANALYSIS: ${{ steps.digest.outputs.analysis }}
+          FUSION_SOCIAL: ${{ steps.digest.outputs.social }}
+          FUSION_MANIFEST: ${{ steps.digest.outputs.manifest }}
+          FUSION_TURN: ${{ steps.digest.outputs.turn }}
+        run: |
+          test "$FUSION_TURN" = '1'
+          test -s "$FUSION_REPORT"
+          test -s "$FUSION_ANALYSIS"
+          test -s "$FUSION_SOCIAL"
+          test -s "$FUSION_MANIFEST"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, verified 2026-11-12
+        with:
+          name: global-fusion-action-smoke
+          path: action-smoke-output/
+          if-no-files-found: error
+          retention-days: 14

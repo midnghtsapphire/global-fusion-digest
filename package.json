@@ -1,0 +1,32 @@
+{
+  "name": "@midnghtsapphire/global-fusion-digest",
+  "version": "1.0.0",
+  "description": "Source-grounded CISA KEV, ICS and FBI IC3 operational intelligence with auditable local digests, REST and MCP.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "bin": { "global-fusion": "src/cli.mjs" },
+  "exports": {
+    ".": "./src/index.mjs",
+    "./api": "./src/api.mjs",
+    "./mcp": "./src/mcp.mjs",
+    "./schemas/*": "./schemas/*"
+  },
+  "files": ["src/", "schemas/", "skill/", "docs/*.md", "action.yml", ".github/scripts/", "README.md", "LICENSE", "SECURITY.md", "Dockerfile"],
+  "repository": { "type": "git", "url": "https://github.com/midnghtsapphire/global-fusion-digest.git" },
+  "homepage": "https://midnghtsapphire.github.io/global-fusion-console/",
+  "bugs": { "url": "https://github.com/midnghtsapphire/global-fusion-digest/issues" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "start": "node src/cli.mjs serve",
+    "digest": "node src/cli.mjs run",
+    "check": "node --check src/cli.mjs && node --check src/index.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "cheerio": "1.2.0",
+    "zod": "4.6.7"
+  }
+}

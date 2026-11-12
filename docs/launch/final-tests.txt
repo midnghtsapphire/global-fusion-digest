@@ -1,0 +1,139 @@
+
+> @midnghtsapphire/global-fusion-digest@1.0.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: REST bearer handling, query bounds and read-only digest response
+ok 1 - REST bearer handling, query bounds and read-only digest response
+  ---
+  duration_ms: 154.359821
+  type: 'test'
+  ...
+# Subtest: non-loopback fails closed without auth and explicit transport acknowledgement
+ok 2 - non-loopback fails closed without auth and explicit transport acknowledgement
+  ---
+  duration_ms: 1.00035
+  type: 'test'
+  ...
+# Subtest: REST upstream source failures return 502 and visible source_status
+ok 3 - REST upstream source failures return 502 and visible source_status
+  ---
+  duration_ms: 11.234075
+  type: 'test'
+  ...
+# Subtest: cache coalesces inflight work and bounds capacity before starting requests
+ok 4 - cache coalesces inflight work and bounds capacity before starting requests
+  ---
+  duration_ms: 2.983836
+  type: 'test'
+  ...
+# Subtest: request rate is bounded
+ok 5 - request rate is bounded
+  ---
+  duration_ms: 6.245591
+  type: 'test'
+  ...
+# Subtest: operational classification is deterministic, not CVE overrides or CVSS
+ok 6 - operational classification is deterministic, not CVE overrides or CVSS
+  ---
+  duration_ms: 2.458763
+  type: 'test'
+  ...
+# Subtest: catalog validation rejects malformed CVEs, dates, duplicates and counts
+ok 7 - catalog validation rejects malformed CVEs, dates, duplicates and counts
+  ---
+  duration_ms: 2.783212
+  type: 'test'
+  ...
+# Subtest: parse official index and detail while excluding chrome and untrusted links
+ok 8 - parse official index and detail while excluding chrome and untrusted links
+  ---
+  duration_ms: 36.14392
+  type: 'test'
+  ...
+# Subtest: collection returns complete stable shape and genuine cited excerpts
+ok 9 - collection returns complete stable shape and genuine cited excerpts
+  ---
+  duration_ms: 48.785069
+  type: 'test'
+  ...
+# Subtest: optional failures degrade visibly while mandatory KEV fails closed
+ok 10 - optional failures degrade visibly while mandatory KEV fails closed
+  ---
+  duration_ms: 16.269829
+  type: 'test'
+  ...
+# Subtest: request bounds, response size, redirect allowlist and timeout
+ok 11 - request bounds, response size, redirect allowlist and timeout
+  ---
+  duration_ms: 32.323911
+  type: 'test'
+  ...
+# Subtest: CLI help/version/analyze and run emit machine-readable receipts
+ok 12 - CLI help/version/analyze and run emit machine-readable receipts
+  ---
+  duration_ms: 2428.864341
+  type: 'test'
+  ...
+# Subtest: CLI errors fail visibly rather than silently ignore options
+ok 13 - CLI errors fail visibly rather than silently ignore options
+  ---
+  duration_ms: 2667.52004
+  type: 'test'
+  ...
+# Subtest: SDK client initializes MCP stdio, lists and executes read-only tools
+ok 14 - SDK client initializes MCP stdio, lists and executes read-only tools
+  ---
+  duration_ms: 601.375091
+  type: 'test'
+  ...
+# Subtest: artifacts commit before turn advances, include raw evidence and hashes
+ok 15 - artifacts commit before turn advances, include raw evidence and hashes
+  ---
+  duration_ms: 218.178485
+  type: 'test'
+  ...
+# Subtest: mandatory source failure creates no counter or archive
+ok 16 - mandatory source failure creates no counter or archive
+  ---
+  duration_ms: 5.355091
+  type: 'test'
+  ...
+# Subtest: multiple processes receive distinct turns without overwritten archives
+ok 17 - multiple processes receive distinct turns without overwritten archives
+  ---
+  duration_ms: 829.894805
+  type: 'test'
+  ...
+# Subtest: same-process concurrent writers and corrupt state fail safely
+ok 18 - same-process concurrent writers and corrupt state fail safely
+  ---
+  duration_ms: 96.349428
+  type: 'test'
+  ...
+# Subtest: filesystem obstruction never advances state or creates a partial archive
+ok 19 - filesystem obstruction never advances state or creates a partial archive
+  ---
+  duration_ms: 6.076072
+  type: 'test'
+  ...
+# Subtest: provably dead local lock recovers but an active process lock does not expire
+ok 20 - provably dead local lock recovers but an active process lock does not expire
+  ---
+  duration_ms: 137.555342
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6191.188352
+Action input validation passed (13 negative cases; no npm/network invocation).
+
+> @midnghtsapphire/global-fusion-digest@1.0.0 check
+> node --check src/cli.mjs && node --check src/index.mjs
+

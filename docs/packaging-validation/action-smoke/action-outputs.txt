@@ -1,0 +1,15 @@
+turn<<fusion_859841d0-b0eb-461e-b402-bb031a0b80d3
+1
+fusion_859841d0-b0eb-461e-b402-bb031a0b80d3
+report<<fusion_dd98e851-b319-4944-9b9c-5f10076637fa
+/tmp/fusion-action-check.QI2pq6/archive/digests/2026/2026-11-12-TURN-001/report.md
+fusion_dd98e851-b319-4944-9b9c-5f10076637fa
+analysis<<fusion_c0b2d6d3-27dc-4329-a898-6fc821ce5314
+/tmp/fusion-action-check.QI2pq6/archive/digests/2026/2026-11-12-TURN-001/analysis.json
+fusion_c0b2d6d3-27dc-4329-a898-6fc821ce5314
+social<<fusion_047397a8-dadc-4b7e-a657-deff16466f6e
+/tmp/fusion-action-check.QI2pq6/archive/digests/2026/2026-11-12-TURN-001/social.json
+fusion_047397a8-dadc-4b7e-a657-deff16466f6e
+manifest<<fusion_89db9a3b-6f23-40c5-ae9c-bcdff42193eb
+/tmp/fusion-action-check.QI2pq6/archive/digests/2026/2026-11-12-TURN-001/manifest.json
+fusion_89db9a3b-6f23-40c5-ae9c-bcdff42193eb

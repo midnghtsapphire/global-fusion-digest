@@ -1,0 +1,70 @@
+name: Reusable Global Fusion Digest
+on:
+  workflow_call:
+    inputs:
+      output-directory:
+        description: 'Archive directory beneath the runner workspace.'
+        type: string
+        default: global-fusion-output
+      latest-limit:
+        description: 'Newest KEV sample size (1–100).'
+        type: number
+        default: 12
+      advisory-limit:
+        description: 'Recent supplementary advisories (1–10 per source).'
+        type: number
+        default: 3
+      seed-last-turn:
+        description: 'Verified last completed historical turn when initializing.'
+        type: number
+        default: 0
+    outputs:
+      turn:
+        description: 'Completed turn number.'
+        value: ${{ jobs.digest.outputs.turn }}
+      report:
+        description: 'Runner-local report path; download the artifact after the job.'
+        value: ${{ jobs.digest.outputs.report }}
+      analysis:
+        description: 'Runner-local analysis path.'
+        value: ${{ jobs.digest.outputs.analysis }}
+      social:
+        description: 'Runner-local social draft path.'
+        value: ${{ jobs.digest.outputs.social }}
+      manifest:
+        description: 'Runner-local archive manifest path.'
+        value: ${{ jobs.digest.outputs.manifest }}
+permissions:
+  contents: read
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      turn: ${{ steps.digest.outputs.turn }}
+      report: ${{ steps.digest.outputs.report }}
+      analysis: ${{ steps.digest.outputs.analysis }}
+      social: ${{ steps.digest.outputs.social }}
+      manifest: ${{ steps.digest.outputs.manifest }}
+    steps:
+      # Checkout this product, not the arbitrary caller repository.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified 2026-11-12
+        with:
+          repository: midnghtsapphire/global-fusion-digest
+          ref: ${{ job.workflow_sha }}
+          persist-credentials: false
+      - name: Generate local archive
+        id: digest
+        uses: ./
+        with:
+          output-directory: ${{ inputs.output-directory }}
+          latest-limit: ${{ inputs.latest-limit }}
+          advisory-limit: ${{ inputs.advisory-limit }}
+          seed-last-turn: ${{ inputs.seed-last-turn }}
+      - name: Retain the generated turn directory
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4, verified 2026-11-12
+        with:
+          name: global-fusion-turn-${{ steps.digest.outputs.turn }}-${{ github.run_id }}
+          path: ${{ inputs.output-directory }}/
+          if-no-files-found: error
+          retention-days: 30

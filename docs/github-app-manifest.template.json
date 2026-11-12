@@ -1,0 +1,11 @@
+{
+  "name": "Global Fusion Digest Read-Only Integration",
+  "url": "https://github.com/midnghtsapphire/global-fusion-digest",
+  "public": true,
+  "description": "Registration design for a future read-only repository integration; no hosted App is registered by this file.",
+  "default_permissions": {
+    "contents": "read",
+    "metadata": "read"
+  },
+  "default_events": []
+}

@@ -1,0 +1,135 @@
+
+> @midnghtsapphire/global-fusion-digest@1.0.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: REST bearer handling, query bounds and read-only digest response
+ok 1 - REST bearer handling, query bounds and read-only digest response
+  ---
+  duration_ms: 149.72151
+  type: 'test'
+  ...
+# Subtest: non-loopback fails closed without auth and explicit transport acknowledgement
+ok 2 - non-loopback fails closed without auth and explicit transport acknowledgement
+  ---
+  duration_ms: 1.070612
+  type: 'test'
+  ...
+# Subtest: REST upstream source failures return 502 and visible source_status
+ok 3 - REST upstream source failures return 502 and visible source_status
+  ---
+  duration_ms: 11.546208
+  type: 'test'
+  ...
+# Subtest: cache coalesces inflight work and bounds capacity before starting requests
+ok 4 - cache coalesces inflight work and bounds capacity before starting requests
+  ---
+  duration_ms: 2.957153
+  type: 'test'
+  ...
+# Subtest: request rate is bounded
+ok 5 - request rate is bounded
+  ---
+  duration_ms: 6.421312
+  type: 'test'
+  ...
+# Subtest: operational classification is deterministic, not CVE overrides or CVSS
+ok 6 - operational classification is deterministic, not CVE overrides or CVSS
+  ---
+  duration_ms: 2.315435
+  type: 'test'
+  ...
+# Subtest: catalog validation rejects malformed CVEs, dates, duplicates and counts
+ok 7 - catalog validation rejects malformed CVEs, dates, duplicates and counts
+  ---
+  duration_ms: 2.806958
+  type: 'test'
+  ...
+# Subtest: parse official index and detail while excluding chrome and untrusted links
+not ok 8 - parse official index and detail while excluding chrome and untrusted links
+  ---
+  duration_ms: 30.863217
+  type: 'test'
+  location: '/home/ubuntu/global-fusion-digest/tests/core.test.mjs:23:1'
+  failureType: 'testCodeFailure'
+  error: 'Official detail missing a valid title, release date, or substantive content'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    parseAdvisory (file:///home/ubuntu/global-fusion-digest/src/parsers.mjs:73:50)
+    TestContext.<anonymous> (file:///home/ubuntu/global-fusion-digest/tests/core.test.mjs:26:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: collection returns complete stable shape and genuine cited excerpts
+ok 9 - collection returns complete stable shape and genuine cited excerpts
+  ---
+  duration_ms: 66.008856
+  type: 'test'
+  ...
+# Subtest: optional failures degrade visibly while mandatory KEV fails closed
+ok 10 - optional failures degrade visibly while mandatory KEV fails closed
+  ---
+  duration_ms: 13.269516
+  type: 'test'
+  ...
+# Subtest: request bounds, response size, redirect allowlist and timeout
+ok 11 - request bounds, response size, redirect allowlist and timeout
+  ---
+  duration_ms: 31.132167
+  type: 'test'
+  ...
+# Subtest: CLI help/version/analyze and run emit machine-readable receipts
+ok 12 - CLI help/version/analyze and run emit machine-readable receipts
+  ---
+  duration_ms: 2470.108833
+  type: 'test'
+  ...
+# Subtest: CLI errors fail visibly rather than silently ignore options
+ok 13 - CLI errors fail visibly rather than silently ignore options
+  ---
+  duration_ms: 2777.970139
+  type: 'test'
+  ...
+# Subtest: SDK client initializes MCP stdio, lists and executes read-only tools
+ok 14 - SDK client initializes MCP stdio, lists and executes read-only tools
+  ---
+  duration_ms: 626.589427
+  type: 'test'
+  ...
+# Subtest: artifacts commit before turn advances, include raw evidence and hashes
+ok 15 - artifacts commit before turn advances, include raw evidence and hashes
+  ---
+  duration_ms: 196.210508
+  type: 'test'
+  ...
+# Subtest: mandatory source failure creates no counter or archive
+ok 16 - mandatory source failure creates no counter or archive
+  ---
+  duration_ms: 5.497533
+  type: 'test'
+  ...
+# Subtest: multiple processes receive distinct turns without overwritten archives
+ok 17 - multiple processes receive distinct turns without overwritten archives
+  ---
+  duration_ms: 806.298088
+  type: 'test'
+  ...
+# Subtest: same-process concurrent writers and corrupt state fail safely
+ok 18 - same-process concurrent writers and corrupt state fail safely
+  ---
+  duration_ms: 96.601787
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 17
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6202.365604

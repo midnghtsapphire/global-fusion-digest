@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+*.tgz
+tests/live-artifacts/
+tests/pack-artifacts/
+digests/
+.transactions/
+state.json
+.fusion*.lock
+.state-*.json

@@ -1,0 +1,4 @@
+[33mglobal-fusion-digest/.github/workflows/digest.yml[0m[90m:[0m54[90m:[0m20[90m: [0m[1mproperty "workflow_sha" is not defined in object type {check_run_id: number; container: {id: string; network: string}; services: {string => {id: string; network: string; ports: {string => string}}}; status: string}[0m[90m [expression]
+[0m[90m   |
+[0m[90m54 | [0m          ref: ${{ job.workflow_sha }}
+[90m   | [0m[32m                   ^~~~~~~~~~~~~~~~[0m

@@ -1,0 +1,56 @@
+name: 'Global Fusion Threat Intelligence Digest'
+description: 'Collect current official CISA KEV, ICS, and FBI IC3 intelligence into a cited digest, six social drafts, and a local archive.'
+author: 'midnghtsapphire'
+branding:
+  icon: shield
+  color: purple
+inputs:
+  output-directory:
+    description: 'Archive directory relative to the caller workspace; preserve this directory between runs to continue turns.'
+    required: false
+    default: 'global-fusion-output'
+  latest-limit:
+    description: 'Number of newest KEV entries to analyze (1–100).'
+    required: false
+    default: '12'
+  advisory-limit:
+    description: 'Maximum recent advisories per supplementary source (1–10).'
+    required: false
+    default: '3'
+  seed-last-turn:
+    description: 'Last completed historical turn, used only when no local archive state exists (nonnegative integer).'
+    required: false
+    default: '0'
+outputs:
+  turn:
+    description: 'Completed archive turn number.'
+    value: ${{ steps.digest.outputs.turn }}
+  report:
+    description: 'Absolute path to the cited Markdown report.'
+    value: ${{ steps.digest.outputs.report }}
+  analysis:
+    description: 'Absolute path to the source analysis JSON.'
+    value: ${{ steps.digest.outputs.analysis }}
+  social:
+    description: 'Absolute path to six-platform social.json; social.md is archived alongside.'
+    value: ${{ steps.digest.outputs.social }}
+  manifest:
+    description: 'Absolute path to the archive manifest.'
+    value: ${{ steps.digest.outputs.manifest }}
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, verified 2026-11-12
+      with:
+        node-version: '24'
+    - name: Collect and archive official intelligence
+      id: digest
+      shell: bash
+      env:
+        FUSION_ACTION_PATH: ${{ github.action_path }}
+        FUSION_OUTPUT_DIRECTORY: ${{ inputs.output-directory }}
+        FUSION_LATEST_LIMIT: ${{ inputs.latest-limit }}
+        FUSION_ADVISORY_LIMIT: ${{ inputs.advisory-limit }}
+        FUSION_SEED_LAST_TURN: ${{ inputs.seed-last-turn }}
+      run: node "$FUSION_ACTION_PATH/.github/scripts/run-action.mjs"

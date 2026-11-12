@@ -1,0 +1,96 @@
+[
+  {
+    "id": "@midnghtsapphire/global-fusion-digest@1.0.0",
+    "name": "@midnghtsapphire/global-fusion-digest",
+    "version": "1.0.0",
+    "size": 22573,
+    "unpackedSize": 66566,
+    "shasum": "69093b9f2feeab4d11a05567f4a6bd1aea7f7bb1",
+    "integrity": "sha512-qfIcTi3Hp3DG8xdiO/Om6RRW6t/fdIR4CVpIzuSgVfU7zu/c+l1F49TfQREszEAOeU57vnyGi89EoA3f9qtKKw==",
+    "filename": "midnghtsapphire-global-fusion-digest-1.0.0.tgz",
+    "files": [
+      {
+        "path": "Dockerfile",
+        "size": 502,
+        "mode": 420
+      },
+      {
+        "path": "LICENSE",
+        "size": 1076,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 6564,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 908,
+        "mode": 420
+      },
+      {
+        "path": "schemas/analysis.schema.json",
+        "size": 3793,
+        "mode": 420
+      },
+      {
+        "path": "schemas/kev.schema.json",
+        "size": 1541,
+        "mode": 420
+      },
+      {
+        "path": "src/api.mjs",
+        "size": 8427,
+        "mode": 420
+      },
+      {
+        "path": "src/cli.mjs",
+        "size": 3915,
+        "mode": 493
+      },
+      {
+        "path": "src/collect.mjs",
+        "size": 5986,
+        "mode": 420
+      },
+      {
+        "path": "src/index.mjs",
+        "size": 464,
+        "mode": 420
+      },
+      {
+        "path": "src/mcp.mjs",
+        "size": 2594,
+        "mode": 420
+      },
+      {
+        "path": "src/network.mjs",
+        "size": 4344,
+        "mode": 420
+      },
+      {
+        "path": "src/parsers.mjs",
+        "size": 6367,
+        "mode": 420
+      },
+      {
+        "path": "src/render.mjs",
+        "size": 7443,
+        "mode": 420
+      },
+      {
+        "path": "src/storage.mjs",
+        "size": 9034,
+        "mode": 420
+      },
+      {
+        "path": "src/validation.mjs",
+        "size": 3608,
+        "mode": 420
+      }
+    ],
+    "entryCount": 16,
+    "bundled": []
+  }
+]

@@ -1,0 +1,17 @@
+# Packaging handoff — 2026-11-12
+
+The assigned packaging specialist created the root composite Action, injection-resistant runner, minimal-permission CI/reusable workflows, README, MIT license, SECURITY policy, API/architecture/operation/source/privacy/terms/Marketplace documentation, and the reusable skill installed at `/home/ubuntu/skills/global-fusion-digest` and copied into `skill/global-fusion-digest`. No package/src/tests/app edits, Git remote mutations, social posts, or `docs/launch/**` edits were performed.
+
+The real local Action runner passed against current official sources and validated every committed manifest file hash. The wrapper passed both checkout (`npm ci`) and local Release-tarball install paths. Action input tests rejected 13 invalid/injection/path/glob cases before npm/network execution. Both skill copies passed `quick_validate` and matched at synchronization. YAML parsed with minimal permissions/no enabled schedule. SHA pins came from actual read-only `gh api` responses.
+
+**Engine-owner follow-up:** At 2026-11-12 19:02 UTC, `npm test` passed 17/18 tests; `tests/core.test.mjs` test “parse official index and detail while excluding chrome and untrusted links” failed at `parseAdvisory`, reporting “Official detail missing a valid title, release date, or substantive content.” Source files are outside packaging ownership. Full output is preserved under `docs/packaging-validation/npm-test.txt`. Re-run after the engine owner resolves it before claiming CI green.
+
+The live packaging smoke was `collection_status: degraded`: KEV and IC3 detail retrieval/parsing succeeded; selected CISA ICS and Cyber detail pages failed parser content requirements. Their genuine source statuses and raw retrieved snapshots are retained. A successful archive is not a claim of complete supplementary-source coverage.
+
+The reusable workflow uses GitHub.com's officially documented `job.workflow_sha` to check out its own co-located code rather than the caller commit. Official actionlint v1.7.12 has an older `job` schema and flags this newly documented property. The official context documentation explicitly gives this checkout pattern and states it is not available on GitHub Enterprise Server. Validate the rest of the workflow separately with only this precise compatibility diagnostic filtered; do not substitute the caller's `github.workflow_sha`.
+
+**Publication remains blocked/pending:** Public repository existence is confirmed by the parent, but browser login, Developer Agreement acceptance, 2FA, tag/release/listing validation, and real Marketplace receipt are owner steps. No npm registry publication, App registration, billing, paid plan, or installation count is claimed.
+
+**Packaging-owner coordination:** The currently observed package `files` list includes `src`, `schemas`, README, LICENSE, and Dockerfile, but excludes `skill/` and `docs/`. The repository contains the finalized skill; add those entries if the published tarball is intended to ship agent resources/documentation. The locally smoke-tested tarball predates any later engine edits and must be repacked by the release owner before final publication.
+
+Validation receipts/archive examples live in `docs/packaging-validation/`. They are small-sample packaging smoke archives, not the owner's next production digest turn and not social publication receipts. The local Action's original receipt paths refer to its preserved `/tmp` workspace; its byte-identical archive copy is retained under the repository validation folder for durability.

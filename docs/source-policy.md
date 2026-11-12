@@ -1,0 +1,13 @@
+# Source and assessment policy
+
+Every new digest collects current official [CISA KEV JSON](https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json), [CISA ICS advisories](https://www.cisa.gov/news-events/ics-advisories), and [FBI IC3 alerts](https://www.ic3.gov/PSA). Recent means the newest relevant publications returned from the official source within the configured sample limit, not a guaranteed last-24-hours window. If no item fits a requested date window, disclose that rather than implying today's publication.
+
+Retain source URL, retrieval time, publication/source date, relevant identifier/version, and coverage errors. Use the source text to support included details and cite material claims close to the claim. Search snippets and historical digests are navigation aids, not sufficient evidence. A failed request does not establish that a source has no alerts. Do not fill gaps with old TURN #002 values labeled current.
+
+Operational labels are **🔴 Critical**, **🟧 High**, **🔵 Anomaly**, **🟡 Medium**, and **⚪ Low**. They are prioritization judgments with a stated rationale, not vendor CVSS replacements. Confirmed exploitation with code execution, privileged control, dangerous authentication chains, or high-consequence exposed assets may justify Critical; material impact may justify High. Asset-dependent exposure and business context inform Medium/Low. Do not manufacture Low entries simply to populate the legend.
+
+Anomaly is reserved for unusual campaign/behavior patterns that call for monitoring or investigation. It does not mean a vulnerability is unimportant, and IC3 publisher identity does not automatically make every notice an anomaly. An IC3 CVE warning still requires vulnerability triage. An ICS advisory's CVSS does not alone establish exploitation; a KEV record's exploitation assertion does not prove the user's organization is compromised.
+
+Keep source facts distinct from analyst interpretation. Do not invent CVSS, affected versions, forensic fields, campaign attribution, compromise observations, victim counts, or social metrics. Counts must name their denominator: sampled KEVs, advisory documents, CVEs, and campaigns are not interchangeable. Link mitigation direction to the vendor/official source and validate compatibility and safety before production changes.
+
+Use official incident-reporting routes, including [CISA](https://www.cisa.gov/report), [IC3](https://www.ic3.gov/), and [FBI tips](https://tips.fbi.gov/). Verify numbers and geographic applicability before including phone-based reporting or emergency advice. Public issue trackers are not incident-evidence submission portals.
